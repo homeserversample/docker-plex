@@ -12,4 +12,6 @@ services:
       - PLEX_CLAIM= #optional
     volumes:
       - ./plex:/plex
+    devices:
+      - /dev/dri:/dev/dri
     restart: unless-stopped
