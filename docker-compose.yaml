@@ -10,6 +10,7 @@ services:
       - TZ=Etc/UTC
       - VERSION=docker
       - PLEX_CLAIM= #optional
+      - PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR=/plex/support
     volumes:
       - ./plex:/plex
     devices:
