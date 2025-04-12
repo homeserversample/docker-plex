@@ -4,8 +4,8 @@ services:
     image: lscr.io/linuxserver/plex:latest
     container_name: plex
     environment:
-      - PUID=1001
-      - PGID=1001
+      - PUID=${PUID}
+      - PGID=${PGID}
       - TZ=Etc/UTC
       - VERSION=docker
       - PLEX_CLAIM= #optional
