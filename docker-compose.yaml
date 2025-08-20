@@ -3,6 +3,7 @@ services:
   plex:
     image: lscr.io/linuxserver/plex:latest
     container_name: plex
+    network_mode: host
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
@@ -12,8 +13,8 @@ services:
       - PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR=/plex/support
     volumes:
       - ./plex:/plex
-    ports:
-      - 32400:32400
+      - ./config:/config
+      - ${SERVERS}/data/downloads:/downloads
     devices:
       - /dev/dri:/dev/dri
     restart: unless-stopped
