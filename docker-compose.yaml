@@ -12,8 +12,8 @@ services:
       - PLEX_CLAIM= #optional
       - PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR=/plex/support
     volumes:
-      - ./plex:/plex
-      - ./config:/config
+      - ${SERVERS}/data/plex/plex:/plex
+      - ${SERVERS}/data/plex/config:/config
       - ${SERVERS}/data/downloads:/downloads
     devices:
       - /dev/dri:/dev/dri
